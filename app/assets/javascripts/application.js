@@ -30,9 +30,13 @@
 //= require jquery.fitvids
 //= require main
 //= require shortcodes
+//= require jquery.slicknav
 //= require_tree ../../templates
-
 jQuery(document).ready(function() {
+	
+	jQuery(function(){
+		$('#menu').slicknav();
+	});
 	
 	//// Preloader, hide all page content until window.load
 	jQuery('.loadingGif').show();
@@ -49,7 +53,10 @@ jQuery(document).ready(function() {
 				var release_content = SMT['releaseshow'](data);
 				jQuery(window).scrollTo('#section3', {duration:200, offset:-65});
 				jQuery('#releaseShowWrapper').fadeIn(750);
-				jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750);
+				jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750, function() {
+					jQuery(".video").fitVids();
+					jQuery("#fitvids").fitVids();
+				});
 			}
 		});
 	});
@@ -111,9 +118,9 @@ jQuery(document).ready(function() {
 	
 	jQuery(window).scroll(function(){                          
 		if ($(this).scrollTop()>=$('#section2').position().top - 65) {
-	    	$('#menu').slideDown(250);
+	    	$('#naviMenu').slideDown(250);
 	    } else {
-	    	$('#menu').slideUp(250);
+	    	$('#naviMenu').slideUp(250);
 	    }
 	});
 	

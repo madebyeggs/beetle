@@ -402,7 +402,7 @@ a, a:visited, a:hover { font-weight: 400; text-decoration: none; }
 .navie {position:absolute;}
 .navigation, .info {z-index:5001;}
 .navigation {color:#ffffff;text-decoration:none;font-size:2em;letter-spacing:0.1em;font-family: 'Lato', sans-serif!important;font-weight:200;font-style:none;text-transform:uppercase!important;}
-.logo {width:80%;margin:50px 0px;}
+.logo {width:224px;margin:50px 0px;}
 .heroText {margin-top:40px;color:#000000;font-family:"Eaves";font-size:50px;line-height:50px;}
 .aboutText {margin-top:30px;color:#000000;font-family:"Eaves";font-size:50px;line-height:50px;letter-spacing:1px;text-align:left;}
 .about2 {display:none;}
@@ -629,7 +629,7 @@ ul#portfolio-grid {margin-bottom:0px;}
 
 #section5 {margin-top:-10px;}
 .col-md-2 {margin:0px;padding:0px;}
-.closeRelease {width:26px;position:absolute;margin:32.5px 0px 0px 49.3%;z-index:1000;}
+.closeRelease {width:26px;margin:32.5px auto -60px auto;z-index:1000;}
 #releaseShowWrapper {height:100%;padding-top:0px;}
 
 .small-border {
@@ -710,7 +710,7 @@ i.icon-remove:hover {
 			border-bottom-right-radius: 3px; 
 }
 
-
+#menu {display:none;}
 /* =Team
 -------------------------------------------------------------- */
 
@@ -1595,6 +1595,14 @@ footer { width: 100%; background: #060606;}
 	.hero-video { background: asset_url('') no-repeat; background-size: cover; background-position: top center;}
 }
 
+@media only screen and (max-width:991px) {
+	
+	.logo {width:20%;margin-top:18px;}
+	.heroText, .aboutText {font-size:40px;line-height:45px;margin:0px;}
+	.contactText {margin-top:30px;margin-bottom:-18px;}
+	.mailDetails {margin-top:0px;}
+}
+
 /* Smaller than 960px */
 @media only screen and (max-width: 959px) {
 	.modal-dialog {width:100%;margin:20px 0%;}
@@ -1619,6 +1627,10 @@ footer { width: 100%; background: #060606;}
 	.hero-video { background: asset_url('') no-repeat; background-size: cover; background-position: top center;}
 	#big-video-wrap { display: none; }
 	.projectlist li {width:100%;margin-left:0%;}
+	.logo {width:25%;margin-top:18px;}
+	.heroText, .aboutText {font-size:40px;line-height:45px;margin:0px;}
+	.contactText {margin-top:30px;margin-bottom:-18px;}
+	.mailDetails {margin-top:0px;}
 }
 
 /* Tablet Portrait Size */
@@ -1638,6 +1650,10 @@ footer { width: 100%; background: #060606;}
 		margin-left:0%;
 	}
 	h2 {font-size: 2.4em !important;}
+	.logo {width:30%;margin-top:18px;margin-bottom:0px;}
+	.heroText, .aboutText {font-size:40px;line-height:45px;margin:0px;}
+	.contactText {margin-top:30px;margin-bottom:0px;}
+	.mailDetails {margin-top:0px;}
 
 }
 
@@ -1645,7 +1661,6 @@ footer { width: 100%; background: #060606;}
 @media only screen and (max-width: 767px) {
 	#releaseShowContent {margin-top:75px;}
 	.description {margin-top:-140px!important;}
-	.logo {width:80%;margin-bottom:-10px;}
 	.icons .overview { width: 50%; }
 	.team-list { padding: 30px 0px 0px; }
 	.team-member { padding-bottom: 25px; }
@@ -1668,12 +1683,15 @@ footer { width: 100%; background: #060606;}
 		margin-left:0%;
 	}
 	h2 {font-size: 2.4em !important;}
+	.logo {width:30%;margin-top:18px;margin-bottom:-20px;}
+	.heroText, .aboutText, .contactText {font-size:30px;line-height:35px;margin:0px;text-align:justify;}
+	.contactText {margin-top:30px;margin-bottom:0px;}
+	.mailDetails {margin-top:0px;}
 	
 }
 
 /* Mobile Landscape Size */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	.logo {width:60%;margin-bottom:-20px;}
 	.down {bottom:20px;}
 	.info {top:20px;}
 	.navigation {margin-top:40px!important;}
@@ -1695,7 +1713,6 @@ footer { width: 100%; background: #060606;}
 		margin-left:0%;
 	}
 	h2 {font-size: 24px !important;}
-	.closeRelease {width:26px;position:absolute;margin:20px 0px 0px 47%;z-index:1000;}
 	
 }
 
@@ -1724,7 +1741,10 @@ footer { width: 100%; background: #060606;}
 		margin-left:0%;
 	}
 	h2 {font-size: 20px !important;}
-	.closeRelease {width:26px;position:absolute;margin:20px 0px 0px 46.5%;z-index:1000;}
+	.logo {width:40%;margin-top:18px;}
+	.heroText, .aboutText, .contactText {font-size:30px;line-height:35px;margin:0px;text-align:justify;}
+	.contactText {margin-top:30px;margin-bottom:-18px;}
+	.mailDetails {margin-top:0px;}
 }
 
 
@@ -1769,7 +1789,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .video {width:100%;}
-#menu {
+#naviMenu {
 	position:fixed;
 	top:0px;
 	width:100%; 
@@ -1798,3 +1818,25 @@ ul.nav {
 a:active {text-decoration:none;}
 .moveLeft {margin-left:35px;}
 .navLink, .navLink2 {display:inline;}
+.slicknav_menu {
+	display:none;
+}
+
+@media screen and (max-width: 991px) {
+	.wrapper {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display:block;
+	}
+}
+
+video {
+	max-width: 100%;
+    height: auto;
+}
+
+iframe, embed, object {
+	max-width: 100%;
+}
