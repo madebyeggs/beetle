@@ -104,12 +104,14 @@ jQuery(document).ready(function() {
 	});
 	
 	jQuery('#btnClick').click(function() {
-		jQuery('.about').hide();
-		jQuery('.about2').show();
+		jQuery('.about').fadeOut('fast', function() {
+			jQuery('.about2').fadeIn();
+		});
 	});
 	jQuery('#btn2Click').click(function() {
-		jQuery('.about2').hide();
-		jQuery('.about').show();
+		jQuery('.about2').fadeOut('fast', function() {
+			jQuery('.about').fadeIn();	
+		});
 	});
 	
 	jQuery('.closebtn').click(function() {
