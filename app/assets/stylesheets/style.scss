@@ -9,6 +9,8 @@ $large:24px;
 $medium:18px;
 $small:12px;
 
+img {max-width:100%;}
+
 a {color:$white;}
 a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
@@ -22,6 +24,8 @@ a:hover, a:visited, a:link, a:active {text-decoration:none;}
 .logo {background:asset-data-url('logo-sprite.png')no-repeat top left;width:220px;height:92px;background-position: 0 -102px;}
 .whiteLogo {background-position: 0 -102px;}
 .blackLogo {background-position: 0 0px;}
+.whiteBG {background-color:$white;}
+.blackBG {background-color:$black;}
 
 .navContainer {position:fixed;width:100%;padding:10px;height:192px;z-index:100;}
 .menuWrapper {text-align:right;margin-top:72px;padding:0;}
@@ -30,7 +34,11 @@ a:hover, a:visited, a:link, a:active {text-decoration:none;}
 .menuWrapper li a {color:$white;font-family:"Gotham-Medium";font-size:$medium;}
 .menuWrapper li.logoWrapper {position:absolute;left:$medium;top:60px;}
 
-.heroText p {font-family:"Gotham-Medium";color:$white;font-size:24px;}
+.heroText {margin-top:360px;}
+.heroText p {font-family:"Gotham-Medium";color:$white;font-size:24px;z-index:100;margin-left:30px;}
+.aboutImage {margin-top:216px;margin-left:30px;width:100%;}
+.aboutText {margin-top:216px;}
+.aboutText p {font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
 
 #particles-js {
   	position: absolute;

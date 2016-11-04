@@ -121,7 +121,7 @@ jQuery(window).load(function() {
 jQuery(window).on('scroll', function() {
     var scrollTop = $(this).scrollTop();
     $('.section').each(function() {
-        var topDistance = $(this).offset().top - 115;
+        var topDistance = $(this).offset().top - 100;
 		var colour = $(this).attr('data-color');
         if ( (topDistance) < scrollTop ) {
 			$('#naviMenu a').css('color',colour);
@@ -134,7 +134,7 @@ jQuery(window).on('scroll', function() {
 			}
         }
     });
-	var targetOffset = $("#section2").offset().top -115;
+	var targetOffset = $("#section2").offset().top -100;
 	var $w = $(window).scroll(function(){
 	    if ( $w.scrollTop() > targetOffset ) {   
 	        $('.menuWrapper li.logoWrapper').css({"top":"24px"});
