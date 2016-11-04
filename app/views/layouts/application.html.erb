@@ -32,9 +32,8 @@
 	<div class="loadingGif">
 		<div class="gif"><%= image_tag('loadingAlt.gif') %></div>
 	</div>
-	
-	<div class="body" style="display:none;">
-		<%= render 'layouts/header' %>
+	<%= render 'layouts/header' %>
+	<div class="body" id="fullpage" style="display:none;">
 		<%= yield %>
 		<%= render 'layouts/footer' %>
 	</div>

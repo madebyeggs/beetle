@@ -10,21 +10,6 @@ function initializeVisia() {
 		jQuery('html').addClass('ie9');
 	}
 
-	//LOCAL SCROLL
-	jQuery('.navigation, .call-to-action, .down, .navLink').localScroll({
-		offset: 0
-	});
-	
-	jQuery('.navLink2').localScroll({
-		offset: 0
-	});
-
-	jQuery("#top").click(function () {
-		return jQuery("body,html").stop().animate({
-			scrollTop: 0
-		}, 800, "easeOutCubic"), !1;
-	});
-
 	//RESPONSIVE HEADINGS
 	jQuery("h1").fitText(1.8, { minFontSize: '30px', maxFontSize: '52px' });
 	jQuery("h2").fitText(1.5, { minFontSize: '20px', maxFontSize: '36px' });

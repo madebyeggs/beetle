@@ -17,9 +17,9 @@ a:hover, a:visited, a:link, a:active {text-decoration:none;}
 .fullScreen {width:100%;height:100vh;}
 .slicknav_menu {display:none;}
 
-#section1, #section3 {background-color:$black;}
-#section2, #section5 {background-color:$white;}
-#section4 {background-color:$darkGrey;}
+#page1, #page3 {background-color:$black;}
+#page2, #page5 {background-color:$white;}
+#page4 {background-color:$darkGrey;}
 
 .logo {background:asset-data-url('logo-sprite.png')no-repeat top left;width:220px;height:92px;background-position: 0 -102px;}
 .whiteLogo {background-position: 0 -102px;}
