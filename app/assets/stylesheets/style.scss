@@ -2,8 +2,15 @@ $black: #000;
 $white: #fff;
 $darkGrey: #303030;
 $lightGrey: #222;
+$xxx-large:42px;
+$xx-large:36px;
+$x-large:30px;
+$large:24px;
+$medium:18px;
+$small:12px;
 
 a {color:$white;}
+a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
 .fullScreen {width:100%;height:100vh;}
 .slicknav_menu {display:none;}
@@ -16,5 +23,21 @@ a {color:$white;}
 .whiteLogo {background-position: 0 -102px;}
 .blackLogo {background-position: 0 0px;}
 
+.navContainer {position:fixed;width:100%;padding:10px;height:192px;z-index:100;}
+.menuWrapper {text-align:right;margin-top:72px;padding:0;}
+.menuWrapper li {display:inline;width:72px;height:$large;text-align:left;padding-left:$xxx-large;}
+.menuWrapper li:nth-child(5) {margin-right:48px;}
+.menuWrapper li a {color:$white;font-family:"Gotham-Medium";font-size:$medium;}
+.menuWrapper li.logoWrapper {position:absolute;left:$medium;top:60px;}
 
 .heroText p {font-family:"Gotham-Medium";color:$white;font-size:24px;}
+
+#particles-js {
+  	position: absolute;
+  	width: 100%;
+  	height: 100%;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+  	background-position: 50% 50%;
+	z-index:0;
+}

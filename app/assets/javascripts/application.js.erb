@@ -30,8 +30,10 @@
 //= require jquery.fitvids
 //= require main
 //= require shortcodes
+//= require particles
 //= require jquery.slicknav
 //= require_tree ../../templates
+
 jQuery(document).ready(function() {
 	
 	jQuery(function(){
@@ -51,7 +53,7 @@ jQuery(document).ready(function() {
 			data: {id: id},
 			success: function(data) {
 				var release_content = SMT['releaseshow'](data);
-				jQuery(window).scrollTo('#section3', {duration:200, offset:-65});
+				jQuery(window).scrollTo('#section5', {duration:200, offset:-65});
 				jQuery('#releaseShowWrapper').fadeIn(750);
 				jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750, function() {
 					jQuery(".video").fitVids();
@@ -69,7 +71,7 @@ jQuery(document).ready(function() {
 			data: {id: id},
 			success: function(data) {
 				var release_content = SMT['releaseshow'](data);
-				jQuery(window).scrollTo('#section3', {duration:200, offset:-65});
+				jQuery(window).scrollTo('#section5', {duration:200, offset:-65});
 				jQuery('#releaseShowWrapper').fadeIn(750);
 				jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750);
 			}
@@ -84,15 +86,11 @@ jQuery(document).ready(function() {
 			data: {id: id},
 			success: function(data) {
 				var release_content = SMT['releaseshow'](data);
-				jQuery(window).scrollTo('#section3', {duration:200, offset:-65});
+				jQuery(window).scrollTo('#section5', {duration:200, offset:-65});
 				jQuery('#releaseShowWrapper').fadeIn(750);
 				jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750);
 			}
 		});
-	});
-	jQuery(".nextClick").click(function() {
-		var id = jQuery(this).prev('.modal-object-id').val();
-		console.log('Hello');
 	});
 	//// Close release display on icon click
 	jQuery('#removeRelease').click(function() {
@@ -103,21 +101,6 @@ jQuery(document).ready(function() {
 		});
 	});
 	
-	jQuery('#btnClick').click(function() {
-		jQuery('.about').fadeOut('fast', function() {
-			jQuery('.about2').fadeIn();
-		});
-	});
-	jQuery('#btn2Click').click(function() {
-		jQuery('.about2').fadeOut('fast', function() {
-			jQuery('.about').fadeIn();	
-		});
-	});
-	
-	jQuery('.closebtn').click(function() {
-	    document.getElementById("myNav").style.height = "0%";
-	});
-	
 	var url = window.location;
 	$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
 	$('ul.nav a').filter(function() {
@@ -126,9 +109,39 @@ jQuery(document).ready(function() {
 	
 });
 
+
 //// Load page content once it has been preloaded
 jQuery(window).load(function() {
 	jQuery('.loadingGif').hide();
   	jQuery('.body').fadeIn(300);
+  	particlesJS.load('particles-js', '/assets/particlesjs-config.json', function() {
+  		console.log('callback - particles.js config loaded');
+  	});
 });
-
+jQuery(window).on('scroll', function() {
+    var scrollTop = $(this).scrollTop();
+    $('.section').each(function() {
+        var topDistance = $(this).offset().top - 115;
+		var colour = $(this).attr('data-color');
+        if ( (topDistance) < scrollTop ) {
+			$('#naviMenu a').css('color',colour);
+			if (colour == "#000") {
+				$('.logo').addClass('blackLogo');
+			}
+			else {
+				$('.logo').removeClass('blackLogo');
+				$('.logo').addClass('whiteLogo');
+			}
+        }
+    });
+	var targetOffset = $("#section2").offset().top -115;
+	var $w = $(window).scroll(function(){
+	    if ( $w.scrollTop() > targetOffset ) {   
+	        $('.menuWrapper li.logoWrapper').css({"top":"24px"});
+			$('.menuWrapper').css({"margin-top":"36px"});
+			$('.navContainer').css({"height":"114px"});
+	    } else {
+	      // ...
+	    }
+	});
+});

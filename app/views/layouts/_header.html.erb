@@ -1,23 +1,14 @@
 <!-- Begin Navigation -->
 <% if controller.controller_name == 'home' && controller.action_name == 'index' %>
-	<nav class="wrapper">
-		<div class="col-md-12" id="naviMenu">
-			<div>
-				<ul class="nav">
-					<div class="navLink2">
-						<li>
-							<a href="#section1">
-								<div class='logo'></div>
-							</a>
-						</li>
-					</div>
-					<div class="navLink"><li><a class="moveLeft" href="#section2">What We Do</a></li></div>
-					<div class="navLink"><li><a class="moveLeft" href="#section3">Candidate Space</a></li></div>
-					<div class="navLink"><li><a class="moveLeft" href="#section4">Get In Touch</a></li></div>
-					<div class="navLink"><li><a class="moveLeft" href="#section4">Our Work</a></li></div>
-				</ul>
-			</div>
+	<nav class="spacing">
+		<div class="navContainer" id="naviMenu">
+		    <ul class="menuWrapper">
+		        <li class="navLink2 logoWrapper"><a href="#section1"><div class='logo'></div></a></li>
+				<li class="navLink"><a href="#section2">What We Do</a></li>
+		        <li class="navLink"><a href="#section3">Candidate Space</a></li>
+		        <li class="navLink"><a href="#section4">Get In Touch</a></li>
+		        <li class="navLink"><a href="#section5">Our Work</a></li>
+		    </ul>
 		</div>
-	
 	</nav>
 <% end %>
