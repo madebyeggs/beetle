@@ -1,5 +1,5 @@
 <!-- Begin Portfolio -->
-<section id="section3" class="portfolio clearfix">
+<section id="section5" class="section fullScreen">
 	<div id="releaseShowWrapper" style="display:none;">
 		<div class="closeRelease">
 			<a data-remote="true" href="#" id="removeRelease"><i class="icon-remove"></i></a>               
@@ -13,21 +13,21 @@
 		</div>
 		
 	</div>
-	<ul id="portfolio-grid" class="projectlist clearfix">
-		<% @works.each do |w| %>
+	<!--<ul id="portfolio-grid" class="projectlist clearfix">
+		<%# @works.each do |w| %>
 			<li class="project">
-				<input type="hidden" value=<%= w.id %> class="modal-object-id">
-				<%= link_to '#', :remote => 'true', :class => 'releaseClick' do %>
-					<%= image_tag w.image.url(:medium, :alt => "thumbnail") %>
+				<input type="hidden" value=<%#= w.id %> class="modal-object-id">
+				<%#= link_to '#', :remote => 'true', :class => 'releaseClick' do %>
+					<%#= image_tag w.image.url(:medium, :alt => "thumbnail") %>
 					<div class="projectinfo">
 						<div class="meta">
-							<h4><%= w.client %></h4>
-							<h6><em><%= w.title.downcase %></em></h6>
+							<h4><%#= w.client %></h4>
+							<h6><em><%#= w.title.downcase %></em></h6>
 						</div>
 					</div>
-				<% end %>
+				<%# end %>
 			</li>
-		<% end %>
-	</ul>
+		<%# end %>
+	</ul>-->
 </section>
 <!-- End Portfolio -->

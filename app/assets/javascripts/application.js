@@ -118,14 +118,6 @@ jQuery(document).ready(function() {
 	    document.getElementById("myNav").style.height = "0%";
 	});
 	
-	jQuery(window).scroll(function(){                          
-		if ($(this).scrollTop()>=$('#section2').position().top - 65) {
-	    	$('#naviMenu').slideDown(250);
-	    } else {
-	    	$('#naviMenu').slideUp(250);
-	    }
-	});
-	
 	var url = window.location;
 	$('ul.nav a[href="'+ url +'"]').parent().addClass('active');
 	$('ul.nav a').filter(function() {
