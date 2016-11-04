@@ -14,6 +14,8 @@ img {max-width:100%;}
 a {color:$white;}
 a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
+.active {color:#fff000;}
+
 .fullScreen {width:100%;height:100vh;}
 .slicknav_menu {display:none;}
 
@@ -36,9 +38,11 @@ a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
 .heroText {margin-top:360px;}
 .heroText p {font-family:"Gotham-Medium";color:$white;font-size:24px;z-index:100;margin-left:30px;}
-.aboutImage {margin-top:216px;margin-left:30px;width:100%;}
-.aboutText {margin-top:216px;}
-.aboutText p {font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
+.aboutImageWrapper {margin-top:216px;}
+.aboutImage {margin-left:30px;width:100%;}
+.aboutImage2 {margin-top:18px;}
+.aboutText, .aboutText2 {margin-top:216px;}
+.aboutText p, .aboutText2 p {font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
 
 #particles-js {
   	position: absolute;

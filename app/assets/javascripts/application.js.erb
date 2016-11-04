@@ -37,11 +37,6 @@
 
 jQuery(document).ready(function() {
 	
-	
-  	particlesJS.load('particles-js', '/assets/particlesjs-config.json', function() {
-  		console.log('callback - particles.js config loaded');
-  	});
-	
 	jQuery(function(){
 		$('#menu').slicknav();
 	});
@@ -52,27 +47,60 @@ jQuery(document).ready(function() {
 	jQuery('#fullpage').fullpage({
 		anchors:['section1', 'section2', 'section3', 'section4', 'section5'],
 		
+		// afterLoad: function(anchorLink, index){
+		// 			var loadedSection = $(this);
+		// 			//using index
+		// 		    	if(index == 1 || index == 3 || index == 4) {
+		// 					$('#naviMenu a').animate({ color: "#fff" }, 1000);
+		// 					$('.logo').removeClass('blackLogo');
+		// 					$('.logo').addClass('whiteLogo');
+		// 		        } else if (index == 2 || index == 5) {
+		// 					$('#naviMenu a').animate({ color: "#000" }, 1000);
+		// 					$('.logo').removeClass('whiteLogo');
+		// 					$('.logo').addClass('blackLogo');
+		// 				}
+		// 				if (index == 1) {
+		// 				    $('.menuWrapper li.logoWrapper').css({"top":"60px"});
+		// 					$('.menuWrapper').css({"margin-top":"72px"});
+		// 					$('.navContainer').css({"height":"192px"});
+		// 				}
+		// 				else {
+		// 			        $('.menuWrapper li.logoWrapper').css({"top":"24px"});
+		// 					$('.menuWrapper').css({"margin-top":"36px"});
+		// 					$('.navContainer').css({"height":"114px"});
+		// 				}
+		// 		}
+		onLeave: function(index, nextIndex, direction){
+			var leavingSection = $(this);
+			$('#naviMenu').fadeOut();
+        },
 		afterLoad: function(anchorLink, index){
-			var loadedSection = $(this);
-			//using index
-		    	if(index == 1 || index == 3 || index == 4) {
-					$('#naviMenu a').animate({ color: "#fff" }, 500);
-					$(".logo").toggleClass("blackLogo whiteLogo");
-		        } else if (index == 2 || index == 5) {
-					$('#naviMenu a').animate({ color: "#000" }, 500);
-					$(".logo").toggleClass("whiteLogo blackLogo ");
-				}
-				if (index == 1) {
-				    $('.menuWrapper li.logoWrapper').css({"top":"60px"});
-					$('.menuWrapper').css({"margin-top":"72px"});
-					$('.navContainer').css({"height":"192px"});
-				}
-				else {
-			        $('.menuWrapper li.logoWrapper').css({"top":"24px"});
-					$('.menuWrapper').css({"margin-top":"36px"});
-					$('.navContainer').css({"height":"114px"});
-				}
-		}
+			if(index == 1) {
+				$('.menuWrapper li.logoWrapper').css({"top":"60px"});
+				$('.menuWrapper').css({"margin-top":"72px"});
+				$('.navContainer').css({"height":"192px"});
+				$('.logo').removeClass('blackLogo');
+				$('.logo').addClass('whiteLogo');
+				$('#naviMenu a').css({"color":"#fff"});
+               	$('#naviMenu').fadeIn();
+				//particlesJS.load('particles-js', '/assets/particlesjs-config.json');
+			}
+			if(index == 3 || index == 4){
+				$('.logo').removeClass('blackLogo');
+				$('.logo').addClass('whiteLogo');
+				$('#naviMenu a').css({"color":"#fff"});
+               	$('#naviMenu').fadeIn();
+           	}
+           	if(index == 2 || index == 5){
+				$('.menuWrapper li.logoWrapper').css({"top":"24px"});
+				$('.menuWrapper').css({"margin-top":"36px"});
+				$('.navContainer').css({"height":"114px"});
+				$('.logo').removeClass('whiteLogo');
+				$('.logo').addClass('blackLogo');
+				$('#naviMenu a').css({"color":"#000"});
+               	$('#naviMenu').fadeIn();
+           	}
+       	}
 	});
 	
 });
@@ -82,26 +110,4 @@ jQuery(document).ready(function() {
 jQuery(window).load(function() {
 	jQuery('.loadingGif').hide();
   	jQuery('.body').fadeIn(300);
-});
-jQuery(window).on('scroll', function() {
-    var scrollTop = $(this).scrollTop();
-    $('.page').each(function() {
-        var topDistance = $(this).offset().top - 100;
-		var colour = $(this).attr('data-color');
-        if ( (topDistance) < scrollTop ) {
-			$('#naviMenu a').css('color',colour);
-			if (colour == "#000") {
-				$('.logo').addClass('blackLogo');
-			}
-			else {
-				$('.logo').removeClass('blackLogo');
-				$('.logo').addClass('whiteLogo');
-			}
-        }
-    });
-	// var targetOffset = $("#section2").offset().top -100;
-	// 	var $w = $(window).scroll(function(){
-	// 	    if ( $w.scrollTop() > targetOffset ) {
-	// 	    }
-	// 	});
 });
