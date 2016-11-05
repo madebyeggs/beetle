@@ -73,7 +73,10 @@ jQuery(document).ready(function() {
 		// 		}
 		onLeave: function(index, nextIndex, direction){
 			var leavingSection = $(this);
-			$('#naviMenu').fadeOut();
+			$('#naviMenu').fadeOut('fast');
+			$('#particles-js').fadeOut('slow', function(){
+				$('#particles-js').css({"display":"none"});
+			});
         },
 		afterLoad: function(anchorLink, index){
 			if(index == 1) {
