@@ -9,6 +9,12 @@ $large:24px;
 $medium:18px;
 $small:12px;
 
+.gif {
+	width:50px;
+	margin:20% auto 40% auto;
+}
+.gif img {max-width:100%;}
+
 .worksTable {font-family:"Gotham-Medium";font-color:$darkGrey;font-size:$medium;}
 .worksTable h1 {text-align:center;margin:$xxx-large 0px;}
 .worksTable td {border-bottom:1px solid $lightGrey;padding:4px 0px;}
