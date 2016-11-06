@@ -15,7 +15,7 @@ a {color:$white;}
 a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
 .active {text-transform:uppercase;}
-.slicknav_menu {display:none;}
+.slicknav_menu {display:none;margin-bottom:$large;background-color:$darkGrey;}
 .section{
 	background-size:cover;
 }
@@ -36,11 +36,13 @@ a:hover, a:visited, a:link, a:active {text-decoration:none;}
 .menuWrapper li:nth-child(4) {margin-right:48px;}
 .menuWrapper li a {color:$white;font-family:"Gotham-Medium";font-size:$medium;}
 .menuWrapper li.logoWrapper {position:absolute;left:$medium;top:24px;}
-.heroText p {font-family:"Gotham-Medium";color:$white;font-size:$x-large;text-align:center;z-index:9999;}
+.heroText p {text-transform:none;font-family:"Gotham-Medium";color:$white;font-size:$x-large;text-align:center;z-index:9999;}
 .aboutImage {margin-left:30px;width:100%;}
-.aboutText p {font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
+.aboutText p {text-transform:none;font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
+.contactText, .mailDetails {font-family:"Gotham-Medium";color:$white;font-size:$large;text-align:center;z-index:9999;text-transform:none;}
+.fa {font-size:$large;}
 
-ul#portfolio-grid {margin-top:212px!important;}
+ul#portfolio-grid {margin-top:132px!important;}
 .meta {display:none;}
 
 /* =Portfolio
@@ -219,9 +221,14 @@ i.icon-remove:hover {
 	.heroText p {font-size:$large;}
 	#naviMenu {display:none;}
 	.slicknav_menu {display:block;position:fixed;width:100%;top:0;z-index:999999999;}
+	.slicknav_menu li:nth-child(1) {display:none;}
+	.slicknav_menu li {text-align:center;font-family:"Gotham-Medium";font-size:$medium;color:$white;}
+	.slicknav_menu li:nth-child(4) {margin-bottom:$medium;}
+	.slicknav_menu li a:hover {color:$white;background-color:$darkGrey;}
 	#page1, #page3 {background-color:#000;}
 	#page2, #page4 {background-color:#fff;}
 	.fullScreen {width:100%;}
+	ul#portfolio-grid {margin-top:40px!important;}
 	
 }
 @media (max-width: 497px) {

@@ -41,7 +41,9 @@
 jQuery(document).ready(function() {
 	
 	jQuery(function(){
-		$('#menu').slicknav();
+		$('#menu').slicknav({
+			closeOnClick:true
+		});
 	});
 	//// Preloader, hide all page content until window.load
 	jQuery('.loadingGif').show();
@@ -166,6 +168,31 @@ jQuery(document).ready(function() {
 	        scrollOverflow: true,
 	        normalScrollElementTouchThreshold: 5,
 	        bigSectionsDestination: null,
+			afterRender: function() {
+				//// Detect click from releases view and generate correct release display
+				jQuery(".releaseClick").click(function() {
+					var id = jQuery(this).prev('.modal-object-id').val();
+					jQuery.ajax({
+						dataType: "json",
+						url: "./works/work_show_via_ajax_call",
+						data: {id: id},
+						success: function(data) {
+							$.fn.fullpage.moveTo(4);
+							var release_content = SMT['releaseshow'](data);
+							jQuery('#releaseShowWrapper').fadeIn(750);
+							jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750);
+						}
+					});
+				});
+				//// Close release display on icon click
+				jQuery('#removeRelease').click(function() {
+					jQuery('#releaseShowWrapper').fadeOut(500, function(){
+						jQuery("#releaseShowWrapper").hide();
+						jQuery('#portfolio-grid').show();
+					///	jQuery("#releaseShowContent").empty();
+					});
+				});
+			}
 		});
 	}
 	
