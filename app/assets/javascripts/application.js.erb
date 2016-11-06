@@ -47,30 +47,7 @@ jQuery(document).ready(function() {
 	
 	jQuery('#fullpage').fullpage({
 		anchors:['section1', 'section2', 'section3', 'section4', 'section5'],
-		
-		// afterLoad: function(anchorLink, index){
-		// 			var loadedSection = $(this);
-		// 			//using index
-		// 		    	if(index == 1 || index == 3 || index == 4) {
-		// 					$('#naviMenu a').animate({ color: "#fff" }, 1000);
-		// 					$('.logo').removeClass('blackLogo');
-		// 					$('.logo').addClass('whiteLogo');
-		// 		        } else if (index == 2 || index == 5) {
-		// 					$('#naviMenu a').animate({ color: "#000" }, 1000);
-		// 					$('.logo').removeClass('whiteLogo');
-		// 					$('.logo').addClass('blackLogo');
-		// 				}
-		// 				if (index == 1) {
-		// 				    $('.menuWrapper li.logoWrapper').css({"top":"60px"});
-		// 					$('.menuWrapper').css({"margin-top":"72px"});
-		// 					$('.navContainer').css({"height":"192px"});
-		// 				}
-		// 				else {
-		// 			        $('.menuWrapper li.logoWrapper').css({"top":"24px"});
-		// 					$('.menuWrapper').css({"margin-top":"36px"});
-		// 					$('.navContainer').css({"height":"114px"});
-		// 				}
-		// 		}
+		css3: false,
 		onLeave: function(index, nextIndex, direction){
 			var leavingSection = $(this);
 			$('#naviMenu').fadeOut('fast');
@@ -87,7 +64,12 @@ jQuery(document).ready(function() {
 				$('.logo').addClass('whiteLogo');
 				$('#naviMenu a').css({"color":"#fff"});
                	$('#naviMenu').fadeIn();
-				particlesJS.load('particles-js', '/assets/particlesjs-config.json');
+				//particlesJS.load('particles-js', '/assets/particlesjs-config.json');
+			}
+			if (index != 1) {
+				$('.menuWrapper li.logoWrapper').css({"top":"24px"});
+				$('.menuWrapper').css({"margin-top":"36px"});
+				$('.navContainer').css({"height":"114px"});
 			}
 			if(index == 3 || index == 4){
 				$('.logo').removeClass('blackLogo');
@@ -96,9 +78,6 @@ jQuery(document).ready(function() {
                	$('#naviMenu').fadeIn();
            	}
            	if(index == 2 || index == 5){
-				$('.menuWrapper li.logoWrapper').css({"top":"24px"});
-				$('.menuWrapper').css({"margin-top":"36px"});
-				$('.navContainer').css({"height":"114px"});
 				$('.logo').removeClass('whiteLogo');
 				$('.logo').addClass('blackLogo');
 				$('#naviMenu a').css({"color":"#000"});
