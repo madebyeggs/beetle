@@ -35,7 +35,7 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
     @work.destroy
     respond_to do |format|
-      format.html { redirect_to root_path }
+      format.html { redirect_to works_path }
     end
   end
   
