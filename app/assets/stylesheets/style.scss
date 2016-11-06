@@ -9,55 +9,36 @@ $large:24px;
 $medium:18px;
 $small:12px;
 
-.gif {width:50px;margin:20% auto 40% auto;}
-.gif img {max-width:100%;}
-
 img {max-width:100%;}
 
 a {color:$white;}
 a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
 .active {color:#fff000;}
-
-.fullScreen {width:100%;height:100vh;}
-.scrollable {overflow:scroll;}
 .slicknav_menu {display:none;}
-
-#page1, #page3 {background-color:$black;}
-#page2, #page5 {background-color:$white;}
-#page4 {background-color:$darkGrey;}
-
+.section{
+	background-size:cover;
+}
+#section1 {
+	background-image: url(https://raw.githubusercontent.com/alvarotrigo/fullPage.js/master/examples/imgs/bg1.jpg);
+}
+.mobileLogo {display:none;}
 .logo {background:asset-data-url('logo-sprite.png')no-repeat top left;width:220px;height:92px;background-position: 0 -102px;}
 .whiteLogo {background-position: 0 -102px;}
 .blackLogo {background-position: 0 0px;}
 .whiteBG {background-color:$white;}
 .blackBG {background-color:$black;}
 
-.navContainer {position:fixed;width:100%;padding:10px;height:192px;z-index:99999999;}
+.navContainer {position:fixed;width:100%;padding:10px;height:114px;z-index:99999999;}
 .whiteBG {background-color:$white;}
-.menuWrapper {text-align:right;margin-top:72px;padding:0;}
+.menuWrapper {text-align:right;margin-top:36px;padding:0;}
 .menuWrapper li {display:inline;width:72px;height:$large;text-align:left;padding-left:$xxx-large;}
-.menuWrapper li:nth-child(5) {margin-right:48px;}
+.menuWrapper li:nth-child(4) {margin-right:48px;}
 .menuWrapper li a {color:$white;font-family:"Gotham-Medium";font-size:$medium;}
-.menuWrapper li.logoWrapper {position:absolute;left:$medium;top:60px;}
-
-.heroText {margin-top:360px;}
-.heroText p {font-family:"Gotham-Medium";color:$white;font-size:$x-large;;margin-left:30px;text-align:center;}
-.aboutImageWrapper {margin-top:216px;}
+.menuWrapper li.logoWrapper {position:absolute;left:$medium;top:24px;}
+.heroText p {font-family:"Gotham-Medium";color:$white;font-size:$x-large;text-align:center;z-index:9999;}
 .aboutImage {margin-left:30px;width:100%;}
-.aboutImage2 {margin-top:18px;}
-.aboutText, .aboutText2 {margin-top:216px;}
-.aboutText p, .aboutText2 p {font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
-
-#particles-js {
-  	position: absolute;
-  	width: 100%;
-  	height: 100%;
-  	background-repeat: no-repeat;
-  	background-size: cover;
-  	background-position: 50% 50%;
-	z-index:0;
-}
+.aboutText p {font-family:"Gotham-ExtraLight";color:$black;font-size:$medium;line-height:$large;z-index:100;margin-left:54px;}
 
 ul#portfolio-grid {margin-top:212px!important;}
 .meta {display:none;}
@@ -220,3 +201,28 @@ i.icon-remove:hover {
 .social-links {margin:$xxx-large 0px;}
 .social-links li {display:inline;padding:3px;}
 .copyright h6 {font-size:$medium;}
+
+@media (max-width: 991px) {
+	.aboutImage {display:none;}
+	.aboutText p {margin-left:0px;font-size:$large;line-height:$x-large;margin:auto $large;}
+}
+
+@media (max-width: 768px) {
+	.heroText {
+		position: relative;
+	}
+	.mobileLogo {display:block;width:25%;margin:0 auto 20px auto;padding-top:$xxx-large;}
+	.projectlist li {width:50%;}
+	.heroText p {font-size:$large;}
+	#naviMenu {display:none;}
+	.slicknav_menu {display:block;position:fixed;width:100%;top:0;z-index:999999999;}
+	#page1, #page3 {background-color:#000;}
+	#page2, #page4 {background-color:#fff;}
+	.fullScreen {height:100vh;width:100%;}
+	
+}
+@media (max-width: 497px) {
+	.mobileLogo {width:50%;}
+	.aboutText p {margin-left:0px;font-size:$medium;line-height:$large;margin:auto $small;}
+	.projectlist li {width:100%;}
+}
