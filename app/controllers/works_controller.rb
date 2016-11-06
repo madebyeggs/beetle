@@ -40,7 +40,7 @@ class WorksController < ApplicationController
   end
   
   def index
-    @works = Work.all
+    @works = Work.rank(:row_order).all
   end
   
   def show
@@ -68,6 +68,12 @@ class WorksController < ApplicationController
     render :json => @work
   end
 
+  def update_row_order
+    @work = Work.find(work_params[:work_id])
+    @work.row_order_position = work_params[:row_order_position]
+    @work.save
+    render nothing: true # this is a POST action, updates sent via AJAX, no view rendered
+  end
 
   private
   # Use callbacks to share common setup or constraints between actions.
@@ -76,7 +82,13 @@ class WorksController < ApplicationController
   end
   
   def work_params
-    params.require(:work).permit(:title, :client, :description, :vimeo, :image)
+    params.require(:work).permit(:work_id, :title, :client, :description, :vimeo, :image, :row_order_position)
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_work
+    @work = Work.find(params[:id])
   end
   
 end

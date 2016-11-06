@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def bring_in_models
-    @works = Work.all
+    @works = Work.rank(:row_order).all
   end
 end

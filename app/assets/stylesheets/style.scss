@@ -9,6 +9,11 @@ $large:24px;
 $medium:18px;
 $small:12px;
 
+.worksTable {font-family:"Gotham-Medium";font-color:$darkGrey;font-size:$medium;}
+.worksTable h1 {text-align:center;margin:$xxx-large 0px;}
+.worksTable td {border-bottom:1px solid $lightGrey;padding:4px 0px;}
+.worksTable td a {color:$darkGrey;}
+
 img {max-width:100%;}
 
 a {color:$white;}

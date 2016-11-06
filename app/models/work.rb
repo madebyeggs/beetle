@@ -1,4 +1,7 @@
 class Work < ActiveRecord::Base
+  
+  include RankedModel
+  ranks :row_order
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :image, styles: {
     medium: '650x430>'
