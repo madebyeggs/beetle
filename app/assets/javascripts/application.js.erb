@@ -45,7 +45,7 @@ jQuery(document).ready(function() {
 	//// Preloader, hide all page content until window.load
 	jQuery('.loadingGif').show();
 	
-	if ( $(window).width() > 768 ) {
+	if ( $(window).width() >= 768 ) {
 		jQuery('#fullpage').fullpage({
 			anchors:['home', 'about', 'contact', 'work'],
 			sectionsColor : ['#000', '#fff', '#000', '#fff'],
@@ -79,27 +79,57 @@ jQuery(document).ready(function() {
 				$('#particles-js').fadeOut('slow', function(){
 					$('#particles-js').css({"display":"none"});
 				});
-	        },
+		    },
 			afterLoad: function(anchorLink, index){
 				if(index == 1 || index == 3) {
 					$('.logo').removeClass('blackLogo');
 					$('.logo').addClass('whiteLogo');
 					$('#naviMenu a').css({"color":"#fff"});
-	               	$('#naviMenu').fadeIn();
+		           	$('#naviMenu').fadeIn();
 					//particlesJS.load('particles-js', '/assets/particlesjs-config.json');
 				}
 				if(index == 2 || index == 4){
 					$('.logo').removeClass('whiteLogo');
 					$('.logo').addClass('blackLogo');
 					$('#naviMenu a').css({"color":"#000"});
-	               	$('#naviMenu').fadeIn();
-	           	}
+		           	$('#naviMenu').fadeIn();
+		       	}
 				if (index == 4) {
 					$('.navContainer').addClass("whiteBG");
 				} else {
 					$('.navContainer').removeClass("whiteBG");
 				}
-	       	}
+		   	}
+		});
+	}
+	else {
+		jQuery('#fullpage').fullpage({
+			anchors:['home', 'about', 'contact', 'work'],
+			sectionsColor : ['#000', '#fff', '#000', '#fff'],
+			//Scrolling
+	        css3: true,
+	        scrollingSpeed: 700,
+	        autoScrolling: false,
+	        fitToSection: true,
+	        fitToSectionDelay: 1000,
+	        scrollBar: true,
+	        easing: 'easeInOutCubic',
+	        easingcss3: 'ease',
+	        loopBottom: false,
+	        loopTop: false,
+	        loopHorizontal: true,
+	        continuousVertical: false,
+	        continuousHorizontal: false,
+	        scrollHorizontally: false,
+	        interlockedSlides: false,
+	        resetSliders: false,
+	        fadingEffect: false,
+	        normalScrollElements: '#element1, .element2',
+	        scrollOverflow: false,
+	        scrollOverflowOptions: null,
+	        touchSensitivity: 15,
+	        normalScrollElementTouchThreshold: 5,
+	        bigSectionsDestination: null,
 		});
 	}
 	
