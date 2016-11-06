@@ -408,6 +408,13 @@
             }
         }
 
+		function moveToTop(sectionAnchor, slideAnchor){
+			var destiny = getSectionByAnchor(sectionAnchor);
+            if (typeof slideAnchor == 'undefined'){
+                scrollPageAndSlide(sectionAnchor, slideAnchor);
+            }
+		}
+
         /**
         * Slides right the slider of the active section.
         * Optional `section` param.
@@ -1356,6 +1363,7 @@
         * Returns the destination Y position based on the scrolling direction and
         * the height of the section.
         */
+
         function getDestinationPosition(element){
             var elemPosition = element.position();
 

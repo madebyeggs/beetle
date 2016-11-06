@@ -17,7 +17,7 @@
 			<% @works.each do |w| %>
 				<li class="project">
 					<input type="hidden" value=<%= w.id %> class="modal-object-id">
-					<%= link_to '#', :remote => 'true', :class => 'releaseClick' do %>
+					<%= link_to '#work', :class => 'releaseClick' do %>
 						<%= image_tag w.image.url(:medium, :alt => "thumbnail") %>
 						<div class="projectinfo">
 							<div class="meta">

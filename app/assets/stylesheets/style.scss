@@ -14,7 +14,7 @@ img {max-width:100%;}
 a {color:$white;}
 a:hover, a:visited, a:link, a:active {text-decoration:none;}
 
-.active {color:#fff000;}
+.active {text-transform:uppercase;}
 .slicknav_menu {display:none;}
 .section{
 	background-size:cover;
@@ -116,8 +116,11 @@ ul#portfolio-grid {margin-top:212px!important;}
 .contactFormWrapper {margin-top:-50px;}
 #section5 {margin-top:0px;}
 
-.closeRelease {width:26px;position:absolute;margin:20px 0px 0px 49.3%;z-index:1000;}
-#releaseShowWrapper {height:100%;padding-top:0px;}
+.closeRelease {width:26px;position:absolute;margin:80px 0px 0px 49.3%;z-index:1000;}
+#releaseShowWrapper {height:100%;margin-top:60px;}
+
+.workDetails {color:$black;font-family:"Gotham-Medium";font-size:$medium;margin:20px auto;}
+.title {font-style:italic;}
 
 .small-border {
 	display: block;
@@ -226,3 +229,4 @@ i.icon-remove:hover {
 	.aboutText p {margin-left:0px;font-size:$medium;line-height:$large;margin:auto $small;}
 	.projectlist li {width:100%;}
 }
+.videoWrapper {width:20%;}

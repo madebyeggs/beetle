@@ -20,6 +20,7 @@
 //= require waypoints
 //= require parallax
 //= require jquery.mixitup
+//= require jquery.scrollTo
 //= require jquery.easing
 //= require jquery.fittext
 //= require jquery.appear
@@ -55,22 +56,11 @@ jQuery(document).ready(function() {
 	        autoScrolling: true,
 	        fitToSection: true,
 	        fitToSectionDelay: 1000,
-	        scrollBar: true,
+	        scrollBar: false,
 	        easing: 'easeInOutCubic',
 	        easingcss3: 'ease',
-	        loopBottom: false,
-	        loopTop: false,
-	        loopHorizontal: true,
-	        continuousVertical: false,
-	        continuousHorizontal: false,
-	        scrollHorizontally: false,
-	        interlockedSlides: false,
-	        resetSliders: false,
-	        fadingEffect: false,
-	        normalScrollElements: '#element1, .element2',
-	        scrollOverflow: false,
-	        scrollOverflowOptions: null,
-	        touchSensitivity: 15,
+	        normalScrollElements: '',
+	        scrollOverflow: true,
 	        normalScrollElementTouchThreshold: 5,
 	        bigSectionsDestination: null,
 			onLeave: function(index, nextIndex, direction){
@@ -81,25 +71,82 @@ jQuery(document).ready(function() {
 				});
 		    },
 			afterLoad: function(anchorLink, index){
-				if(index == 1 || index == 3) {
+				if(index == 1) {
+					$('.navContainer').removeClass("whiteBG");
 					$('.logo').removeClass('blackLogo');
 					$('.logo').addClass('whiteLogo');
 					$('#naviMenu a').css({"color":"#fff"});
-		           	$('#naviMenu').fadeIn();
+					$('#naviMenu').find('a').eq(1).removeClass('active');
+					$('#naviMenu').find('a').eq(2).removeClass('active');
+					$('#naviMenu').find('a').eq(3).removeClass('active');
+					$('#naviMenu').find('a').eq(0).addClass('active', function() {
+		           		$('#naviMenu').fadeIn();
+					});
 					//particlesJS.load('particles-js', '/assets/particlesjs-config.json');
 				}
-				if(index == 2 || index == 4){
+				else if(index == 2){
+					$('.navContainer').removeClass("whiteBG");
 					$('.logo').removeClass('whiteLogo');
 					$('.logo').addClass('blackLogo');
 					$('#naviMenu a').css({"color":"#000"});
-		           	$('#naviMenu').fadeIn();
+					$('#naviMenu').find('a').eq(0).removeClass('active');
+					$('#naviMenu').find('a').eq(2).removeClass('active');
+					$('#naviMenu').find('a').eq(3).removeClass('active');
+					$('#naviMenu').find('a').eq(1).addClass('active', function() {
+		           		$('#naviMenu').fadeIn();
+					});
 		       	}
-				if (index == 4) {
-					$('.navContainer').addClass("whiteBG");
-				} else {
+				else if(index == 3) {
 					$('.navContainer').removeClass("whiteBG");
+					$('.logo').removeClass('blackLogo');
+					$('.logo').addClass('whiteLogo');
+					$('#naviMenu a').css({"color":"#fff"});
+					$('#naviMenu').find('a').eq(0).removeClass('active');
+					$('#naviMenu').find('a').eq(1).removeClass('active');
+					$('#naviMenu').find('a').eq(3).removeClass('active');
+					$('#naviMenu').find('a').eq(2).addClass('active', function() {
+		           		$('#naviMenu').fadeIn();
+					});
+					//particlesJS.load('particles-js', '/assets/particlesjs-config.json');
 				}
-		   	}
+				else {
+					$('.logo').removeClass('whiteLogo');
+					$('.logo').addClass('blackLogo');
+					$('#naviMenu a').css({"color":"#000"});
+					$('.navContainer').addClass("whiteBG");
+					$('#naviMenu').find('a').eq(0).removeClass('active');
+					$('#naviMenu').find('a').eq(1).removeClass('active');
+					$('#naviMenu').find('a').eq(2).removeClass('active');
+					$('#naviMenu').find('a').eq(3).addClass('active', function() {
+		           		$('#naviMenu').fadeIn();	
+					});
+				}
+		   	},
+			afterRender: function() {
+				//// Detect click from releases view and generate correct release display
+				jQuery(".releaseClick").click(function() {
+					var id = jQuery(this).prev('.modal-object-id').val();
+					jQuery.ajax({
+						dataType: "json",
+						url: "./works/work_show_via_ajax_call",
+						data: {id: id},
+						success: function(data) {
+							$.fn.fullpage.moveTo(4);
+							var release_content = SMT['releaseshow'](data);
+							jQuery('#releaseShowWrapper').fadeIn(750);
+							jQuery('#releaseShowContent').empty().hide().append(release_content).fadeIn(750);
+						}
+					});
+				});
+				//// Close release display on icon click
+				jQuery('#removeRelease').click(function() {
+					jQuery('#releaseShowWrapper').fadeOut(500, function(){
+						jQuery("#releaseShowWrapper").hide();
+						jQuery('#portfolio-grid').show();
+					///	jQuery("#releaseShowContent").empty();
+					});
+				});
+			}
 		});
 	}
 	else {
@@ -109,25 +156,14 @@ jQuery(document).ready(function() {
 			//Scrolling
 	        css3: true,
 	        scrollingSpeed: 700,
-	        autoScrolling: false,
+	        autoScrolling: true,
 	        fitToSection: true,
 	        fitToSectionDelay: 1000,
-	        scrollBar: true,
+	        scrollBar: false,
 	        easing: 'easeInOutCubic',
 	        easingcss3: 'ease',
-	        loopBottom: false,
-	        loopTop: false,
-	        loopHorizontal: true,
-	        continuousVertical: false,
-	        continuousHorizontal: false,
-	        scrollHorizontally: false,
-	        interlockedSlides: false,
-	        resetSliders: false,
-	        fadingEffect: false,
-	        normalScrollElements: '#element1, .element2',
-	        scrollOverflow: false,
-	        scrollOverflowOptions: null,
-	        touchSensitivity: 15,
+	        normalScrollElements: '',
+	        scrollOverflow: true,
 	        normalScrollElementTouchThreshold: 5,
 	        bigSectionsDestination: null,
 		});
