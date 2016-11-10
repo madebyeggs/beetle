@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :works do
     post :update_row_order, on: :collection
   end
+  resources "contacts", only: [:new, :create]
 end

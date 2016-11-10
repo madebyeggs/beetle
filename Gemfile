@@ -18,6 +18,9 @@ gem 'aws-sdk', '~> 2.3'
 gem 'sass-rails'
 gem 'jquery-ui-rails'
 gem 'ranked-model'
+gem 'mail_form'
+gem 'letter_opener'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug'
