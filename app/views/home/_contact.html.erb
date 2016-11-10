@@ -1,5 +1,5 @@
 <div class="section">
-	<section id="page3" class="fullScreen">
+	<section id="page3" class="fullScreen" style="margin-top:72px;">
 		<div class="col-md-12">
 			<div class="col-md-3">&nbsp;</div>
 			<div class="col-md-6">
@@ -7,7 +7,16 @@
 			</div>
 			<div class="col-md-3">&nbsp;</div>
 		</div>
-		
+		<div align="center" class="contactForm">
+			<%= simple_form_for @contact, :html => { :class => "contactForm" } do |f| %>
+		    	<%= f.input :name, label: false, :required => true, input_html: { class: 'formInput first', value: "name" }, wrapper_html: { class: 'inlineForm' } %>
+		    	<%= f.input :email, label: false, :required => true, input_html: { class: 'formInput', value: "email" }, wrapper_html: { class: 'inlineForm' } %>
+		    	<%= f.input :message, label: false, :as => :text, :required => true, input_html: { class: 'formTextArea', value: "message" }, wrapper_html: { class: 'textAreaForm' } %><br/>
+				<%= f.input :file, as: :file, label: "Upload your CV", input_html: {class: "upload" }, wrapper_html: {class: "uploadWrapper"} %>
+		    	<div class="hidden"><%= f.input :nickname, :hint => 'Leave this field blank!' %></div><br/><br/>
+		      	<%= f.button :submit, 'Send', :class => "btn btn-light" %>
+		  	<% end %>
+		</div><br/><br/>
 		<div class="col-md-12">
 			<div class="col-md-2">&nbsp;</div>
 			<div class="col-md-8 mailDetails">
