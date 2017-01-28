@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400);
+
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+input, textarea {
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+}
+
+button, html input[type="button"],/* 1 */ input[type="reset"], input[type="submit"] {
+
+	-webkit-appearance: button;
+	cursor: pointer;
+ *overflow:visible;
+}
+
+body, img {
+	transition: all .2s linear;
+	-o-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-webkit-transition: all .2s linear;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, input, main {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, img, main {
+	display: block
+}
+
+audio, canvas, video {
+	display: inline-block;
+ 	*display:inline;
+ 	*zoom:1
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+.clear {
+	clear: both;
+	line-height: 0;
+	height: 0;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+	color: #010101;
+	transition-delay: 0s;
+	transition-duration: 0.6s;
+	transition-property: all;
+	transition-timing-function: ease;
+}
+
+a:focus, img:focus, button:focus, .btn:focus {
+	outline: none;
+}
+::-moz-selection {
+ background-color:#e84d49;
+ color:#fff;
+ text-shadow:none;
+}
+
+::selection {
+	background-color: #e84d49;
+	color: #fff;
+	text-shadow: none;
+}
+
+@font-face {
+	font-family: 'Lato', sans-serif;
+
+}
+
+/*===== Main ===*/
+
+main[role="main-wrapper-iamge"],main[role="main-wrapper-iamge"] > .over-bg-color{ background-image:url(../assets/); background-size:cover; background-position:50% 0; background-repeat:no-repeat; width:100%; height:100%; position:fixed; width:100%; height:100%}
+main[role="main-wrapper-iamge"] > .over-bg-color{background-color:rgba(255,255,255,0.5); background-image:none; padding:0}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width:250px;
+	margin-top:20px;
+}
+
+/*===== Header ===*/
+header[role="header"]{ position: fixed; bottom:0; left:0; right:0; width:100%; padding:0 5%; z-index:6}
+header[role="header"] > hgroup{background-color:rgba(255,255,255,0.7); overflow:hidden; position:relative }
+header[role="header"] > hgroup > h1{ padding:0; margin:0; display:inline-block; position:relative; z-index:5}
+header[role="header"] > hgroup > h1 > a{ background-color:#353535; text-transform:none; font-family: 'Lato', serif;text-align:center; font-size:24px; line-height:52px;color:#FFF ;display:inline-block; width:157px; font-weight:500; letter-spacing:5px;  }
+header[role="header"] > hgroup > h1 > a:hover{ text-decoration:none}
+
+/*===== Footer ===*/
+header[role="header"] footer{ text-align:right}
+header[role="header"] footer > p,footer.mobile p{ font-size:12px; line-height:50px; color:#353535; font-weight:400}
+header[role="header"] footer > p > i,footer.mobile p i{ color:#e84d49; display:inline-block; padding:0 5px}
+footer.mobile{ display:none}
+
+/*===== Countdown ===*/
+article[role="countdown"].countdown-pan{ margin-top:0%!important;}
+article[role="countdown"].countdown-pan h2{font-family: 'Lato', serif; padding:0; margin:0; font-size:24px; line-height:26px; text-transform:none; font-weight:400; letter-spacing:3px}
+article[role="countdown"].countdown-pan h2 > span{ font-size:72px; line-height:72px; position:relative; letter-spacing:inherit; display:inline-block}
+article[role="countdown"].countdown-pan h2 > span:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-5px; margin:0 auto; background-color:#e84d49}
+article[role="countdown"].countdown-pan > p{ text-transform:none; font-weight:300; letter-spacing:3px; margin:0; padding:0; padding-top:29px;font-size:24px;}
+
+/*===== Page-title ===*/
+article header.page-title h2{ text-align:center;font-family: 'Lato', serif; text-transform:none; font-size:24px; line-height:26px; color:#353535; font-weight:300; letter-spacing:3px; position:relative; margin-bottom:36px; padding:0; margin-top:0}
+article header.page-title h2:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-12px; margin:0 auto; background-color:#e84d49}
