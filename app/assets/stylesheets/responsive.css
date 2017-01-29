@@ -1,6 +1,6 @@
 /* lg */
 @media (min-width:1400px) and (max-width:1920px) {
-	article.countdown-pan[role="countdown"]{padding-top:2.5%}
+	article.countdown-pan[role="countdown"]{padding-top:0%}
 }
 /* lg */
 /*@media (min-width:1200px) and (max-width:1401px) {
@@ -10,11 +10,11 @@
 }*/
 /* md */
 @media (min-width: 992px) and (max-width: 1199px) {
-	article.countdown-pan[role="countdown"]{padding-top:2.5%}
+	article.countdown-pan[role="countdown"]{padding-top:0%}
 }
 /* sm */
 @media (min-width: 768px) and (max-width: 991px) {
-	article.countdown-pan[role="countdown"]{padding-top:2.5%;}
+	article.countdown-pan[role="countdown"]{padding-top:0%;}
 	article.countdown-pan[role="countdown"].countdown-pan > p{width:700px;margin:inherit auto;}
 	header[role="header"]{ padding:0 1%}
 	header[role="header"] > hgroup nav ul > li{ margin:0 4.5px}
@@ -25,7 +25,7 @@
 	main[role="main-wrapper-iamge"],main[role="main-wrapper-iamge"] > .over-bg-color{ position: static; background-image:none}
 	main[role="main-wrapper-iamge"]{ background-image: none}
 	main[role="main-wrapper-iamge"] > .over-bg-color{ background-color:inherit}
-	article.countdown-pan[role="countdown"],article.subscribe-pan[role="subscribe"],article.contact-pan[role="contact"]{ padding-bottom:60%; padding-top:10%}
+	article.countdown-pan[role="countdown"],article.subscribe-pan[role="subscribe"],article.contact-pan[role="contact"]{ padding-bottom:60%; padding-top:0%}
 	article.introduction-pan[role="introduction"]{ padding-top:30.6%}
 	
 	header[role="header"] > hgroup > h1 > a{ width:120%; line-height:39px; font-size:20px}
@@ -59,6 +59,6 @@
 	article.countdown-pan[role="countdown"].countdown-pan > p{width:400px;margin:inherit auto;}
 }
 @media (max-width:414px) {
-	article.countdown-pan[role="countdown"],article.subscribe-pan[role="subscribe"],article.contact-pan[role="contact"]{ padding-bottom:60%; padding-top:20%}
+	article.countdown-pan[role="countdown"],article.subscribe-pan[role="subscribe"],article.contact-pan[role="contact"]{ padding-bottom:60%; padding-top:0%}
 	article.countdown-pan[role="countdown"].countdown-pan > p{width:320px;margin:inherit auto;}
 }

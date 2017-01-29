@@ -123,7 +123,7 @@ article[role="countdown"].countdown-pan{ margin-top:0%!important;}
 article[role="countdown"].countdown-pan h2{font-family: 'Lato', serif; padding:0; margin:0; font-size:24px; line-height:26px; text-transform:none; font-weight:400; letter-spacing:3px}
 article[role="countdown"].countdown-pan h2 > span{ font-size:72px; line-height:72px; position:relative; letter-spacing:inherit; display:inline-block}
 article[role="countdown"].countdown-pan h2 > span:after{ content:""; display:block; width:98px; height:3px; position:absolute; left:0; right:0; bottom:-5px; margin:0 auto; background-color:#e84d49}
-article[role="countdown"].countdown-pan > p{ text-transform:none; font-weight:300; letter-spacing:3px; margin:0 auto; padding:0; padding-top:29px;font-size:24px;width:900px;}
+article[role="countdown"].countdown-pan > p{ text-transform:none; font-weight:300; letter-spacing:3px; margin:0 auto; padding:0; padding-top:39px;font-size:24px;width:900px;}
 
 /*===== Page-title ===*/
 article header.page-title h2{ text-align:center;font-family: 'Lato', serif; text-transform:none; font-size:24px; line-height:26px; color:#353535; font-weight:300; letter-spacing:3px; position:relative; margin-bottom:36px; padding:0; margin-top:0}
